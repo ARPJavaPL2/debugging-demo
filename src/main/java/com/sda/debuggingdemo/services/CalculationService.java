@@ -72,8 +72,8 @@ public class CalculationService {
     }
 
     public String capitalize(String string) {
-        String firsChar = string.substring(1, 2).toUpperCase();
-        return firsChar.concat(string.substring(2));
+        String firsChar = string.substring(0,1).toUpperCase();
+        return firsChar.concat(string.substring(1));
     }
 
     @SuppressWarnings("all")
