@@ -46,7 +46,7 @@ public class CalculationService {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < strings.size(); i++) {
-            String tempString = strings.get(i + 1);
+            String tempString = strings.get(i);
 
             sb.append(tempString).append(" ");
         }
