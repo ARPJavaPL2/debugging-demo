@@ -1,5 +1,6 @@
 package com.sda.debuggingdemo.services;
 
+import net.bytebuddy.implementation.bytecode.Division;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,13 +54,16 @@ public class CalculationService {
         return sb.toString();
     }
 
-    public Long divide(List<Integer> numbers) {
-        Long tempNumber = 0L;
-        for (Integer number : numbers) {
-            tempNumber /= number;
-        }
-        return tempNumber;
+    public Double divide(List<Double> numbers) {
+        Double tempNumber = 9.5;
+        for (int i = 0; i < numbers.size(); i++) {
+            if (i+1<numbers.size()) {
+                tempNumber = numbers.get(i) / numbers.get(i + 1);
+                System.out.println(tempNumber);
+            }continue;
+        }    return tempNumber;
     }
+
 
     @SuppressWarnings("all")
     public String toUppercase(String string) {
@@ -72,7 +76,7 @@ public class CalculationService {
     }
 
     public String capitalize(String string) {
-        String firsChar = string.substring(0,1).toUpperCase();
+        String firsChar = string.substring(0, 1).toUpperCase();
         return firsChar.concat(string.substring(1));
     }
 

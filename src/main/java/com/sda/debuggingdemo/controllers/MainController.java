@@ -42,7 +42,7 @@ public class MainController {
     }
 
     @GetMapping("division")
-    public ResponseEntity<Long> division(@RequestParam List<Integer> numbers) {
+    public ResponseEntity<Double> division(@RequestParam List<Double> numbers) {
         return ResponseEntity.ok(calculationService.divide(numbers));
     }
 
